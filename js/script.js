@@ -179,9 +179,9 @@ window.onload = function() {
     let rt = +rate.textContent;
     let rtTemp = rt;
     let objSave = JSON.parse(sessionStorage.getItem('obj'));
-    stars.textContent = objSave.stars;
+    if (objSave != null) stars.textContent = objSave.stars;
     let st = +stars.textContent;
-    coins.textContent = objSave.coins;
+    if (objSave != null) coins.textContent = objSave.coins;
     let m = +coins.textContent;
     
 
@@ -224,14 +224,14 @@ window.onload = function() {
         rtTemp = rt;
         rt = 0;
         rate.textContent = rt;
+        stars.textContent = st;       
         
         objSave = {
             coins: coins.textContent,
             stars: st
         }
           
-        sessionStorage.setItem('obj', JSON.stringify(objSave));         
-        console.log( JSON.parse(sessionStorage.getItem('obj') ) );
+        sessionStorage.setItem('obj', JSON.stringify(objSave));  
         spin.disabled = true;
         auto.disabled = false; 
         spin.style.background = "#69916d"; 
