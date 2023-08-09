@@ -163,7 +163,7 @@ const reels = [
   ]
 }
 ];
-
+/* end settings */
 
 window.onload = function() {
 
@@ -182,9 +182,9 @@ window.onload = function() {
     if (objSave != null) stars.textContent = objSave.stars;
     let st = +stars.textContent;
     if (objSave != null) coins.textContent = objSave.coins;
-    let m = +coins.textContent;
-    
+    let m = +coins.textContent;  
 
+    
     const callback = function(payLine) {
         console.log(payLine[0].title + ' | ' + payLine[1].title + ' | ' + payLine[2].title);
 
